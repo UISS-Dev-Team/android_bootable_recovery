@@ -72,7 +72,7 @@ lunch完成可以执行rec编译了：
 
 首先：获取字库生成脚本以及fonts文件
 
-https://github.com/UISS-Dev-Team/CWM_REC_6.0.3.2_CHN.git
+https://github.com/UISS-Dev-Team/android_bootable_recovery.git
 
 字库生成文件在minui下：
 
