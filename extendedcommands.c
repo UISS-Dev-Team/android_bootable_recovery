@@ -49,10 +49,14 @@
 int signature_check_enabled = 1;
 int script_assert_enabled = 1;
 // static const char *SDCARD_UPDATE_FILE = "/sdcard/update.zip";
-static const char *SDCARD_UPDATE_FILE = "/sdcard/emulated/0/update.zip";
+// static const char *SDCARD_UPDATE_FILE = "/sdcard/0/update.zip";
+// for MB886 only
+static const char *SDCARD_UPDATE_FILE = "/storage/sdcard1/update.zip";
 // for Nexus7 only
-static const char *SDCARD_GUOHOW_FILE = "/sdcard/emulated/0/flash.zip";
+// static const char *SDCARD_GUOHOW_FILE = "/sdcard/0/flash.zip";
 // static const char *SDCARD_GUOHOW_FILE = "/sdcard/flash.zip";
+// for MB886 only
+static const char *SDCARD_GUOHOW_FILE = "/storage/sdcard1/flash.zip";
 
 
 int
