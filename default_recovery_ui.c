@@ -22,12 +22,12 @@
 
 char* MENU_HEADERS[] = { "CWM_V6.0.3.2中文刷机系统"};
 
-char* MENU_ITEMS[] = { "立即重启到android系统",
-                       "从内存卡选择刷机包刷入",
+char* MENU_ITEMS[] = { "重启系统",
+                       "从SDcard选择文件更新系统",
                        "使用adb sideload模式刷机",
-                       "wipe data/全部用户数据",
-                       "wipe cache/缓存数据",
-                       "系统备份与恢复",
+                       "清空data分区并恢复出厂设置",
+                       "清空cache分区",
+                       "备份和恢复",
                        "分区格式化与挂载",
                        "高级选项",
                        "立即关机",

@@ -642,17 +642,17 @@ wipe_data(int confirm) {
             title_headers = prepend_title((const char**)headers);
         }
 
-        char* items[] = { "  呀买碟",
-                          "  呀买碟",
-                          "  呀买碟",
-                          "  呀买碟",
-                          "  呀买碟",
-                          "  呀买碟",
-                          "  呀买碟",
+        char* items[] = { "  不要",
+                          "  不要",
+                          "  不要",
+                          "  不要",
+                          "  不要",
+                          "  不要",
+                          "  不要",
                           "  我一定要删除所有用户数据",   // [7]
-                          "  呀买碟",
-                          "  呀买碟",
-                          "  呀买碟",
+                          "  不要",
+                          "  不要",
+                          "  不要",
                           NULL };
 
         int chosen_item = get_menu_selection(title_headers, items, 1, 0);
