@@ -23,7 +23,7 @@
 char* MENU_HEADERS[] = { "CWM_V6.0.3.2中文刷机系统"};
 
 char* MENU_ITEMS[] = { "重启系统",
-                       "从SDcard选择文件更新系统",
+                       "从SD卡选择文件更新系统",
                        "使用adb sideload模式刷机",
                        "清空data分区并恢复出厂设置",
                        "清空cache分区",

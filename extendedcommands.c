@@ -556,7 +556,7 @@ void show_nandroid_restore_menu(const char* path)
 void show_nandroid_delete_menu(const char* path)
 {
     if (ensure_path_mounted(path) != 0) {
-        LOGE("我操，没法挂载 %s\n", path);
+        LOGE("fuck，没法挂载 %s\n", path);
         return;
     }
 
@@ -757,7 +757,7 @@ int confirm_selection(const char* title, const char* confirm)
         return chosen_item == 1;
     }
     else {
-        char* items[] = { "不要",
+        char* items[] = { "不要",  
                         "不要",
                         "不要",
                         "不要",
@@ -1260,17 +1260,17 @@ void show_nandroid_menu()
     char *other_sd = NULL;
     if (volume_for_path("/emmc") != NULL) {
         other_sd = "/emmc";
-        list[6] = "backup to internal sdcard";
-        list[7] = "restore from internal sdcard";
-        list[8] = "advanced restore from internal sdcard";
-        list[9] = "delete from internal sdcard";
+        list[6] = "备份到内部SD卡";
+        list[7] = "从内部SD卡恢复";
+        list[8] = "高级恢复从内部SD卡";
+        list[9] = "从内部SD卡中删除";
     }
     else if (volume_for_path("/external_sd") != NULL) {
         other_sd = "/external_sd";
-        list[6] = "backup to external sdcard";
-        list[7] = "restore from external sdcard";
-        list[8] = "advanced restore from external sdcard";
-        list[9] = "delete from external sdcard";
+        list[6] = "备份到外部SD卡";
+        list[7] = "从外部SD卡恢复";
+        list[8] = "高级恢复从外部SD卡";
+        list[9] = "从外部SD卡中删除";
     }
 #ifdef RECOVERY_EXTEND_NANDROID_MENU
     extend_nandroid_menu(list, 10, sizeof(list) / sizeof(char*));
