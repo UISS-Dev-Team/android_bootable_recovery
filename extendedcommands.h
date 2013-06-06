@@ -11,14 +11,14 @@ void
 show_choose_zip_menu();
 
 void
-show_guohowflash_menu();
+show_zerojimflash_menu();
 
 void
-show_guohowhelp_menu();
+show_zerojimhelp_menu();
 
 
 void
-show_guohowwholewipe_menu();
+show_zerojimwholewipe_menu();
 
 int
 do_nandroid_backup(const char* backup_name);
