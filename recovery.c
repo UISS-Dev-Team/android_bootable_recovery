@@ -738,19 +738,19 @@ prompt_and_wait() {
                 show_advanced_menu();
                 break;
                 
-           case ITEM_ZEROJIMFLASH:
+           case ITEM_GUOHOWFLASH:
                 // 调用exs.c中该函数
-                show_zerojimflash_menu();
+                show_guohowflash_menu();
                 break;
                 
-                 case ITEM_ZEROJIMWHOLEWIPE:
+                 case ITEM_GUOHOWWHOLEWIPE:
                 // 调用exs.c中该函数
-                show_zerojimwholewipe_menu();
+                show_guohowwholewipe_menu();
                 break;
                 
-           case ITEM_ZEROJIMHELP:
+           case ITEM_GUOHOWHELP:
                // 调用exs.c中该函数
-               show_zerojimhelp_menu();
+               show_guohowhelp_menu();
                break;
 
             case ITEM_POWEROFF:

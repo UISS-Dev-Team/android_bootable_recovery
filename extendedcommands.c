@@ -54,7 +54,7 @@ static const char *SDCARD_UPDATE_FILE = "/sdcard/update.zip";
 // static const char *SDCARD_GUOHOW_FILE = "/sdcard/0/flash.zip";
 // static const char *SDCARD_GUOHOW_FILE = "/sdcard/flash.zip";
 // for MB886 only
-static const char *SDCARD_ZEROJIM_FILE = "/storage/sdcard1/flash.zip";
+static const char *SDCARD_GUOHOW_FILE = "/storage/sdcard1/flash.zip";
 
 
 int
@@ -130,7 +130,7 @@ int install_zip(const char* packagefilepath)
 }
 
 // help
-void show_zerojimhelp_menu()
+void show_guohowhelp_menu()
 {
 
    ui_print("\n --感谢阅读--\n");
@@ -196,7 +196,7 @@ erase_volume(const char *volume) {
 }
 
 // 实现recovery.c中选择函数
-void show_zerojimflash_menu()
+void show_guohowflash_menu()
 {
 
 
@@ -215,7 +215,7 @@ void show_zerojimflash_menu()
             ui_print("已经抹掉数据.\n");
             ui_print("第二步>>>\n");
             ui_print("开始解压文件到系统中 \n");
-            install_zip(SDCARD_ZEROJIM_FILE);
+            install_zip(SDCARD_GUOHOW_FILE);
             android_reboot(ANDROID_RB_RESTART, 0, 0);
           //  break;
 
@@ -223,7 +223,7 @@ void show_zerojimflash_menu()
 
 // 一键wipe
 void
-show_zerojimwholewipe_menu()
+show_guohowwholewipe_menu()
 {
 
             ui_print("开始一键wipe \n");
@@ -1003,7 +1003,7 @@ void show_partition_menu()
 
     for (i = 0; i < num_volumes; ++i) {
         Volume* v = &device_volumes[i];
-		// zerojim : not sure about the translation?
+		// guohow : not sure about the translation?
         if(strcmp("ramdisk", v->fs_type) != 0 && strcmp("mtd", v->fs_type) != 0 && strcmp("emmc", v->fs_type) != 0 && strcmp("bml", v->fs_type) != 0) {
                 sprintf(&mount_menu[mountable_volumes].mount, "挂载 %s", v->mount_point);
                 sprintf(&mount_menu[mountable_volumes].unmount, "取消挂载 %s", v->mount_point);
@@ -1047,7 +1047,7 @@ void show_partition_menu()
         }
 
         if (!is_data_media()) {
-		// zerojim : not sure too
+		// guohow : not sure too
           options[mountable_volumes + formatable_volumes] = "开启U盘模式";
           options[mountable_volumes + formatable_volumes + 1] = NULL;
         }

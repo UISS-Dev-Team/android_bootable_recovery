@@ -86,11 +86,11 @@ int device_wipe_data();
 // 激活关机选项
 #define ITEM_POWEROFF        8
 // 一键wipe
-#define ITEM_ZEROJIMWHOLEWIPE        9
+#define ITEM_GUOHOWWHOLEWIPE        9
 // 添加一键刷机
-#define ITEM_ZEROJIMFLASH        10
+#define ITEM_GUOHOWFLASH        10
 // 帮助
-#define ITEM_ZEROJIMHELP        11
+#define ITEM_GUOHOWHELP        11
 
 // Header text to display above the main menu.
 extern char* MENU_HEADERS[];
