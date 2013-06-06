@@ -50,7 +50,7 @@ set_usb_driver(int enabled) {
     }
 
     if (status < 0) {
-        ui_print("无法链接设备额..: %s\n", strerror(errno));
+        ui_print("无法链接设备: %s\n", strerror(errno));
     }
 
     if (close(fd) < 0) {
@@ -114,7 +114,7 @@ apply_from_adb() {
     pthread_t sideload_thread;
     pthread_create(&sideload_thread, NULL, &adb_sideload_thread, &data);
     
-    static char* headers[] = {  "",
+    static char* headers[] = {  "ADB Sideload",
                                 "",
                                 NULL
     };

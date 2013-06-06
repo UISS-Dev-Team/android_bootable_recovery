@@ -107,7 +107,7 @@ extern UIParameters ui_parameters;    // from ui.c
  * 1. main system downloads OTA package to /cache/some-filename.zip
  * 2. main system writes "--update_package=/cache/some-filename.zip"
  * 3. main system reboots into recovery
- * 4. get_args() writes BCB with "boot-recovery" and "--update_package= "
+ * 4. get_args() writes BCB with "boot-recovery" and "--update_package=..."
  *    -- after this, rebooting will attempt to reinstall the update --
  * 5. install_package() attempts to install the update
  *    NOTE: the package install must itself be restartable from any point
@@ -273,7 +273,7 @@ copy_log_file(const char* destination, int append) {
 // this function is idempotent: call it as many times as you like.
 static void
 finish_recovery(const char *send_intent) {
-    // By this point, we're ready to return to the main system 
+    // By this point, we're ready to return to the main system...
     if (send_intent != NULL) {
         FILE *fp = fopen_path(INTENT_FILE, "w");
         if (fp == NULL) {
@@ -859,7 +859,7 @@ main(int argc, char **argv) {
     int is_user_initiated_recovery = 0;
     time_t start = time(NULL);
 
-    // If these fail, there's not really anywhere to complain 
+    // If these fail, there's not really anywhere to complain...
     freopen(TEMPORARY_LOG_FILE, "a", stdout); setbuf(stdout, NULL);
     freopen(TEMPORARY_LOG_FILE, "a", stderr); setbuf(stderr, NULL);
     printf("Starting recovery on %s", ctime(&start));
@@ -960,7 +960,7 @@ main(int argc, char **argv) {
             ui_set_show_text(0);
         }
     } else {
-        LOGI("Checking for extendedcommand \n");
+        LOGI("Checking for extendedcommand...\n");
         status = INSTALL_ERROR;  // No command specified
         // we are starting up in user initiated recovery here
         // let's set up some default options
@@ -971,7 +971,7 @@ main(int argc, char **argv) {
         ui_set_background(BACKGROUND_ICON_CLOCKWORK);
         
         if (extendedcommand_file_exists()) {
-            LOGI("Running extendedcommand \n");
+            LOGI("Running extendedcommand...\n");
             int ret;
             if (0 == (ret = run_and_remove_extendedcommand())) {
                 status = INSTALL_SUCCESS;
@@ -981,7 +981,7 @@ main(int argc, char **argv) {
                 handle_failure(ret);
             }
         } else {
-            LOGI("Skipping execution of extendedcommand, file not found \n");
+            LOGI("Skipping execution of extendedcommand, file not found...\n");
         }
     }
 
