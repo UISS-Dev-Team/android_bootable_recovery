@@ -1003,10 +1003,12 @@ void show_partition_menu()
         Volume* v = &device_volumes[i];
 		// guohow : not sure about the translation?
         if(strcmp("ramdisk", v->fs_type) != 0 && strcmp("mtd", v->fs_type) != 0 && strcmp("emmc", v->fs_type) != 0 && strcmp("bml", v->fs_type) != 0) {
-            sprintf(&mount_menu[mountable_volumes].mount, "挂载 %s", v->mount_point);
-            sprintf(&mount_menu[mountable_volumes].unmount, "取消挂载 %s", v->mount_point);
-            mount_menu[mountable_volumes].v = &device_volumes[i];
-            ++mountable_volumes;
+            if (strcmp("datamedia", v->fs_type) != 0) {
+                sprintf(&mount_menu[mountable_volumes].mount, "挂载 %s", v->mount_point);
+                sprintf(&mount_menu[mountable_volumes].unmount, "取消挂载 %s", v->mount_point);
+                mount_menu[mountable_volumes].v = &device_volumes[i];
+                ++mountable_volumes;
+            }
             if (is_safe_to_format(v->mount_point)) {
                 sprintf(&format_menu[formatable_volumes].txt, "格式化 %s", v->mount_point);
                 format_menu[formatable_volumes].v = &device_volumes[i];
