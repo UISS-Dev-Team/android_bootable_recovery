@@ -210,7 +210,7 @@ void show_guohowflash_menu()
             if (has_datadata()) {
             erase_volume("/datadata");
               }
-			erase_volume("/sd-ext");
+            erase_volume("/sd-ext");
             erase_volume("/sdcard/.android_secure");
             ui_print("已经抹掉数据.\n");
             ui_print("第二步>>>\n");
@@ -459,7 +459,7 @@ char* choose_file_menu(const char* directory, const char* fileExtensionOrDirecto
     int total = numDirs + numFiles;
     if (total == 0)
     {
-        ui_print("没找到你说的相关文件啊! \n");
+        ui_print("没找到你说的相关文件啊 \n");
     }
     else
     {
@@ -1005,10 +1005,10 @@ void show_partition_menu()
         Volume* v = &device_volumes[i];
 		// guohow : not sure about the translation?
         if(strcmp("ramdisk", v->fs_type) != 0 && strcmp("mtd", v->fs_type) != 0 && strcmp("emmc", v->fs_type) != 0 && strcmp("bml", v->fs_type) != 0) {
-                sprintf(&mount_menu[mountable_volumes].mount, "挂载 %s", v->mount_point);
-                sprintf(&mount_menu[mountable_volumes].unmount, "取消挂载 %s", v->mount_point);
-                mount_menu[mountable_volumes].v = &device_volumes[i];
-                ++mountable_volumes;
+            sprintf(&mount_menu[mountable_volumes].mount, "挂载 %s", v->mount_point);
+            sprintf(&mount_menu[mountable_volumes].unmount, "取消挂载 %s", v->mount_point);
+            mount_menu[mountable_volumes].v = &device_volumes[i];
+            ++mountable_volumes;
             if (is_safe_to_format(v->mount_point)) {
                 sprintf(&format_menu[formatable_volumes].txt, "格式化 %s", v->mount_point);
                 format_menu[formatable_volumes].v = &device_volumes[i];
@@ -1518,7 +1518,7 @@ void show_advanced_menu()
                 ensure_path_mounted("/data");
                 ui_print("正在努力修复权限  \n");
                 __system("fix_permissions");
-                ui_print("完成啦!\n");
+                ui_print("完成啦 \n");
                 break;
             case 6:
                 partition_sdcard("/sdcard");
@@ -1591,7 +1591,7 @@ int bml_check_volume(const char *path) {
         return 0;
     }
     
-    ui_print("%s may be rfs. 正在检查...\n", path);
+    ui_print("%s may be rfs. 正在检查 \n", path);
     char tmp[PATH_MAX];
     sprintf(tmp, "mount -t rfs %s %s", vol->device, path);
     int ret = __system(tmp);
