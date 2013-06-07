@@ -428,7 +428,7 @@ int nandroid_backup(const char* backup_path)
     ui_print("生成md5 校验值...\n");
     sprintf(tmp, "nandroid-md5.sh %s", backup_path);
     if (0 != (ret = __system(tmp))) {
-        ui_print("MD5校验值生成失败!\n");
+        ui_print("MD5校验值生成失败 \n");
         return ret;
     }
 
