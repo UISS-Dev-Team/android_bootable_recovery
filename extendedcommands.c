@@ -140,7 +140,7 @@ void show_guohowhelp_menu()
                                  "---------------by zerojim-----------------",  
                                  "\n",
                                 "[一键刷机]：为你清空data/cache数据",
-								"自动刷SD卡根目录flash.zip并重启机器",
+                                "自动刷SD卡根目录flash.zip并重启机器",
                                 "请手动将flash.zip复制到SD卡",
                                 "确认外部SD卡存在 flash.zip再操作",
                                 "刷完自动重启，否则请手动重启",                             
@@ -255,7 +255,7 @@ show_guohowwholewipe_menu()
 // 
 
 #define ITEM_CHOOSE_ZIP       0
-#define ITEM_APPLY_SDCARD     1
+#define ITEM_APPLY_UPDATE     1
 #define ITEM_SIG_CHECK        2
 #define ITEM_CHOOSE_ZIP_INT   3
 
@@ -290,7 +290,7 @@ void show_install_update_menu()
             case ITEM_SIG_CHECK:
                 toggle_signature_check();
                 break;
-            case ITEM_APPLY_SDCARD:
+            case ITEM_APPLY_UPDATE:
             {
                 if (confirm_selection("确认安装?", "安装/sdcard/update.zip"))
                     install_zip(SDCARD_UPDATE_FILE);
